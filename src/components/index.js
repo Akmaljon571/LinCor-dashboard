@@ -1,5 +1,5 @@
-import Statistics from './statistika'
+import Xisobot from './xisobot/xisobot'
 
 export {
-    Statistics
+    Xisobot
 }

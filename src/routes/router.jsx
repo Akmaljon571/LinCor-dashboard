@@ -1,24 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import Xisobod from "../components/xisobod/xisobod";
+import { Xisobot } from "../components";
 
 
 function Routerr() {
     return ( 
         <Routes>
-            <Route path="/Xisobod" element={<Xisobod/>} />
+            <Route path="/xisobot" element={<Xisobot/>} />
         
         </Routes>
     );
 }
 
 export default Routerr;
-
-
-/*
-    Xisobod
-    Course 
-    video
-    workbook
-    workbook_open
-    add user with course
-*/

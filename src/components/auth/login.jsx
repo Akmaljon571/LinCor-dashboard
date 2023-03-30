@@ -6,11 +6,10 @@ import { SendOutlined } from '@ant-design/icons'
 import { Button, notification } from 'antd'
 import { SmileOutlined } from '@ant-design/icons'
 import useComponent from '../../hooks/useComponent'
-import { apiGet } from '../../utils/api'
+import { apiGet, host } from '../../utils/api'
 
 function Login() {
   const navigate = useNavigate()
-  const host = 'https://api.lincor.uz'
   const [error, setError] = useState(false)
   const [parol, setParol] = useState(
     JSON.parse(localStorage.getItem('loginParol')) || false,
@@ -46,7 +45,7 @@ function Login() {
     const password = passwordInput.current.value
     enterLoading(2)
     if (email && password) {
-      fetch(host + '/api/v1/users/admin/login', {
+      fetch(host + '/users/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +155,7 @@ function Login() {
       })
     }
 
-    apiGet('/users/admin/login/email/' + input)
+    fetch(host + '/users/admin/login/email/' + input)
     .then(re => re.json())
       .then((data) => {
         if (data.status == 200) {
