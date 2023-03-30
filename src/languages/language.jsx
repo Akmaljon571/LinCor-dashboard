@@ -1,10 +1,10 @@
 export default [{
     uz:{
-        Xisobod: "Xisobod",
+        Xisobod: "Xisobot",
         oqish: "Kurslar",
-        guruh: "Guruhlar",
-        tolov: "To’lovlar",
-        davoma: "Davomat",
+        guruh: "Video",
+        tolov: "Ish kitobi",
+        davoma: "Sotib Olish",
         sozla: "Sozlash"
     },
 
@@ -14,9 +14,9 @@ export default [{
     ru:{
         Xisobod: "Отчет",
         oqish: "Курсы",
-        guruh: "Группы",
-        tolov: "Платежи",
-        davoma: "Посещаемость",
+        guruh: "Bидео",
+        tolov: "Рабочая тетрадь",
+        davoma: "Покупка",
         sozla: "Настройка"
     },
 
@@ -25,9 +25,9 @@ export default [{
     en:{
         Xisobod: "Report",
         oqish: "Courses",
-        guruh: "Groups",
-        tolov: "Payments",
-        davoma: "Attendance",
+        guruh: "Video",
+        tolov: "Workbook",
+        davoma: "Purchase",
         sozla: "Setting"
     },
     
