@@ -1,5 +1,4 @@
-import Xisobot from './xisobot/xisobot'
+import Xisobot from "./xisobot/xisobot";
+import Course from "./course/course";
 
-export {
-    Xisobot
-}
+export { Xisobot, Course };
