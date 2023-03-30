@@ -4,7 +4,7 @@ import { host } from '../../../utils/api'
 import useComponent from '../../../hooks/useComponent'
 import yukla from '../../../img/bx_download.svg'
 import useStart from '../../../hooks/useStart'
-import Tillar from "../../../languages/language"
+import Tillar from '../../../languages/language'
 
 function InputsCourse() {
   const sar = useRef()
@@ -17,24 +17,29 @@ function InputsCourse() {
   const { token, setCount, count } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
 
-  const sent = async () => {
+  const sent = () => {
     const title = sar.current.value
-    const a = await des.current.value
+    const description = des.current.value
     const price = pri.current.value
     const bgcolor = bgc.current.value
     const sequence = seq.current.value
     const file = rasmi.current.files[0]
     const key = 'updatable'
+    messageApi.open({
+      key,
+      type: 'loading',
+      content: 'Loading...',
+    })
 
-    if (title && a && price && bgcolor && sequence && file) {
+    if (title && description && price && bgcolor && sequence && file) {
       const formData = new FormData()
       formData.append('file', file)
       formData.append('title', title)
       formData.append('price', price)
       formData.append('bgcolor', bgcolor)
       formData.append('sequence', sequence)
-      formData.append('description', a)
-      console.log(a)
+      formData.append('description', description)
+
       fetch(host + '/courses/create', {
         method: 'POST',
         headers: {
@@ -43,12 +48,7 @@ function InputsCourse() {
         body: formData,
       }).then((data) => {
         if (data.ok) {
-          setCount(count)
-          messageApi.open({
-            key,
-            type: 'loading',
-            content: 'Loading...',
-          })
+          setCount(count + 1)
           setTimeout(() => {
             messageApi.open({
               key,
@@ -58,11 +58,6 @@ function InputsCourse() {
             })
           }, 1000)
         } else {
-          messageApi.open({
-            key,
-            type: 'loading',
-            content: 'Loading...',
-          })
           setTimeout(() => {
             messageApi.open({
               key,
@@ -74,11 +69,6 @@ function InputsCourse() {
         }
       })
     } else {
-      messageApi.open({
-        key,
-        type: 'loading',
-        content: 'Loading...',
-      })
       setTimeout(() => {
         messageApi.open({
           key,

@@ -7,7 +7,8 @@ export const StatPriveder = ({ children }) => {
     JSON.parse(localStorage.getItem('admin_token')) || '',
   )
   const [count, setCount] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
-  const data = { token, setToken, count, setCount }
+  const data = { token, setToken, count, setCount, openModal, setOpenModal }
   return <State.Provider value={data}>{children}</State.Provider>
 }
