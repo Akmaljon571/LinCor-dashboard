@@ -4,11 +4,12 @@ import { apiGet } from '../../../utils/api'
 import darkImage from '../../../img/icon (1).svg'
 import image from '../../../img/icon.svg'
 import useStart from '../../../hooks/useStart'
+import Tillar from '../../../languages/language'
 
 function Card() {
   const [data, setData] = useState()
   const { token } = useComponent()
-  const { dark } = useStart()
+  const { dark, lang } = useStart()
 
   useEffect(() => {
     apiGet('/users/statistika', token)
@@ -22,21 +23,21 @@ function Card() {
   return (
     <ul className="card_statistika">
       <li className="item">
-        <span>Jami Userlar:</span> {data?.allUsers?.length || 0} ta
+        <span>{Tillar[0][lang].jami}:</span> {data?.allUsers?.length || 0} ta
         <br />
-        <span>active: </span> {data?.activeUser || 0} ta
+        <span>{Tillar[0][lang].active}: </span> {data?.activeUser || 0} ta
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
       <li className="item">
-        <span>1 Haftali Daromat: </span> <br /> {data?.hafta || 0}
+        <span>1 {Tillar[0][lang].hafta}: </span> <br /> {data?.hafta || 0}
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
       <li className="item">
-        <span>1 Oylik Daromat:</span> <br /> {data?.hafta || 0}
+        <span>1 {Tillar[0][lang].oylik}:</span> <br /> {data?.hafta || 0}
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
       <li className="item">
-        <span>1 Yillik Daromat: </span> <br /> {data?.hafta || 0}
+        <span>1 {Tillar[0][lang].yillik}: </span> <br /> {data?.hafta || 0}
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
     </ul>

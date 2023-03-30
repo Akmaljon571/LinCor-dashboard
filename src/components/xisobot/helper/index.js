@@ -1,7 +1,4 @@
-import Statistics from './statistika'
-import Card from './card'
+import Statistics from "./statistika";
+import Card from "./card";
 
-export {
-    Statistics,
-    Card
-}
+export { Statistics, Card };

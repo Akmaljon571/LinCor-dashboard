@@ -12,8 +12,8 @@ import {
 } from 'chart.js'
 import styles from '../xisobot.scss'
 import { Bar } from 'react-chartjs-2'
+import Tillar from '../../../languages/language'
 import useStart from '../../../hooks/useStart'
-
 
 ChartJS.register(
   CategoryScale,
@@ -53,7 +53,7 @@ function Statistics() {
     data1: [20, 40, 60, 70, 20, 30, 50, 68, 14, 20],
     data2: [40, 20, 70, 30, 80, 40, 70, 28, 44, 50],
   }
-
+  const { lang } = useStart()
   const monthNames = [
     'January',
     'February',
@@ -126,8 +126,8 @@ function Statistics() {
 
   return (
     <>
-      <div className='statistika'>
-        <h1 className={`${styles.title} txt`}>2023-YIL statistika</h1>
+      <div className="statistika">
+        <h1 className={`${styles.title} txt`}>{Tillar[0][lang].statistika}</h1>
         <Bar style={{ width: '100%' }} options={options} data={data} />
       </div>
     </>

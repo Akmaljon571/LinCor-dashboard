@@ -1,14 +1,14 @@
-import { Card, Statistics } from "./helper";
-import "./dark.scss"
-import "./xisobot.scss"
+import { Card, Statistics } from './helper'
+import './dark.scss'
+import './xisobot.scss'
 
 const Xisobot = () => {
   return (
     <div>
-      <Card/>
+      <Card />
       <Statistics />
     </div>
-  );
-};
+  )
+}
 
-export default Xisobot;
+export default Xisobot
