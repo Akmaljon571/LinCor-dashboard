@@ -15,7 +15,6 @@ function Card() {
     apiGet('/users/statistika', token)
       .then((re) => re.json())
       .then((baza) => {
-        console.log(baza)
         setData(baza)
       })
   }, [setData, token])

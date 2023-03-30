@@ -12,8 +12,22 @@
   list-style-type: none;
 }
 
+.none {
+  display: none;
+}
+
 #root {
   height: 100%;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
 }
 
 .Sabinas_logo {

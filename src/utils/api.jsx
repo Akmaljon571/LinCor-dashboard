@@ -9,14 +9,3 @@ export const apiGet = (url, token, method = 'GET') => {
     },
   })
 }
-
-export const apiCU = (url, method, body, token) => {
-  return fetch(host + url, {
-    method: `${method}`,
-    headers: {
-      'Content-Type': 'application/json',
-      'autharization': token,
-    },
-    body,
-  })
-}

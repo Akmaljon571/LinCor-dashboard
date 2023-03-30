@@ -1,0 +1,101 @@
+.inputs_course {
+  position: relative;
+  h1 {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(0, 97, 247, 1);
+    margin-top: 32px;
+    margin-left: 80px;
+    margin-bottom: 32px;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin: 0 80px;
+    flex-wrap: wrap;
+    color: rgb(60, 57, 57);
+
+    li {
+      width: 320px;
+      height: 88px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+
+      span {
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        text-align: left;
+      }
+
+      input {
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid rgba(47, 73, 209, 0.6);
+        border-radius: 8px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        height: 48px;
+        padding: 13px;
+        outline: none;
+      }
+    }
+
+    .rasm {
+      label {
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid rgba(47, 73, 209, 0.6);
+        border-radius: 8px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        height: 48px;
+        padding: 13px;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+    }
+  }
+  button {
+    width: 320px;
+    height: 48px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    background: #2f49d1;
+    border-radius: 8px;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 80px;
+    margin-top: 32px;
+    cursor: pointer;
+  }
+}
