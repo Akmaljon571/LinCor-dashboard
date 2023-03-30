@@ -99,3 +99,71 @@
     cursor: pointer;
   }
 }
+
+
+@media screen and (max-width: 1098px) {
+  .inputs_course {
+    h1 {
+      margin-left: 0px;
+    }
+
+    ul {
+      margin: 0;
+    }
+    button {
+      right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 926px) {
+  .inputs_course {
+    ul {
+      li {
+        width: 200px;
+      }
+    }
+
+    button {
+      width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 682px) {
+  .inputs_course {
+    h1 {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+    ul {
+      li {
+        width: 150px;
+      }
+    }
+    button {
+      width: 150px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 598px) {
+  .inputs_course {
+    ul {
+      li {
+        width: 180px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 446px) {
+  .inputs_course {
+    ul {
+      li {
+        width: 140px;
+      }
+    }
+  }
+}

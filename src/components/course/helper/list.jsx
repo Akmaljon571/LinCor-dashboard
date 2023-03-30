@@ -1,8 +1,8 @@
 function ListCourse() {
+    
     return (  
-        <>
-            table list
-        </>
+        <ul className="list_course">
+        </ul>
     );
 }
 

@@ -1,9 +1,10 @@
 import { useRef } from 'react'
+import { message } from 'antd'
+import { host } from '../../../utils/api'
 import useComponent from '../../../hooks/useComponent'
 import yukla from '../../../img/bx_download.svg'
-import { host } from '../../../utils/api'
-import { message } from 'antd'
-import { SmileOutlined } from '@ant-design/icons'
+import useStart from '../../../hooks/useStart'
+import Tillar from "../../../languages/language"
 
 function InputsCourse() {
   const sar = useRef()
@@ -12,7 +13,8 @@ function InputsCourse() {
   const bgc = useRef()
   const rasmi = useRef()
   const seq = useRef()
-  const { token } = useComponent()
+  const { lang } = useStart()
+  const { token, setCount, count } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
 
   const sent = async () => {
@@ -41,6 +43,7 @@ function InputsCourse() {
         body: formData,
       }).then((data) => {
         if (data.ok) {
+          setCount(count)
           messageApi.open({
             key,
             type: 'loading',
@@ -89,39 +92,39 @@ function InputsCourse() {
 
   return (
     <div className="inputs_course">
-      <h1>Yangi Kurs qo’shish</h1>
+      <h1>{Tillar[0][lang].courseAdd}</h1>
       <ul>
         <li>
-          <span>title</span>
+          <span>{Tillar[0][lang].title}</span>
           <input ref={sar} type="text" placeholder="Topik 1" />
         </li>
         <li>
-          <span>Description</span>
+          <span>{Tillar[0][lang].des}</span>
           <input ref={des} type="text" placeholder="Kurs haqida qisqacha" />
         </li>
         <li>
-          <span>Narxi</span>
+          <span>{Tillar[0][lang].narx}</span>
           <input ref={pri} type="text" placeholder="1 000 000" />
         </li>
         <li>
-          <span>Background</span>
+          <span>{Tillar[0][lang].bgc}</span>
           <input ref={bgc} type="color" />
         </li>
         <li>
-          <span>Ketma-ketligi</span>
+          <span>{Tillar[0][lang].seq}</span>
           <input ref={seq} type="number" placeholder="1" />
         </li>
         <li className="rasm">
-          <span>Rasmi</span>
+          <span>{Tillar[0][lang].rasm}</span>
           <label htmlFor="rasm">
-            <i>Yuklash</i>
+            <i>{Tillar[0][lang].yukla}</i>
             <img src={yukla} alt="yukla" />
           </label>
           <input id="rasm" ref={rasmi} className="none" type="file" />
         </li>
       </ul>
       {contextHolder}
-      <button onClick={sent}>Jonatish</button>
+      <button onClick={sent}>{Tillar[0][lang].sent}</button>
     </div>
   )
 }

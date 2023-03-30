@@ -13,6 +13,16 @@ const arr = [
       hafta: 'Haftalik Daromad',
       oylik: 'Oylik Daromad',
       yillik: 'Yillik Daromad',
+      courseAdd: 'Yangi Kurs qo’shish',
+      title: "Sarlavha",
+      des: 'Ma’lumot',
+      narx: 'Narxi',
+      bgc: 'Orqa fon',
+      rasm: 'Rasm',
+      seq: 'Ketma-ketlik',
+      yukla: 'Yuklash',
+      sent: 'Yuborish',
+
     },
 
     ru: {
@@ -28,6 +38,15 @@ const arr = [
       hafta: 'Еженедельно',
       oylik: 'Ежемесячно',
       yillik: 'Годовой доход',
+      courseAdd: 'Добавить новый курс',
+      title: "Заголовок",
+      des: 'Описание',
+      narx: 'Цена',
+      bgc: 'Фон',
+      rasm: 'Картина',
+      seq: 'Последовательность',
+      yukla: 'Загрузить',
+      sent: 'Отправка',
     },
 
     en: {
@@ -43,6 +62,15 @@ const arr = [
       hafta: 'Weekly income',
       oylik: 'Monthly Income',
       yillik: 'Annual Income',
+      courseAdd: 'Add a new course',
+      title: "Title",
+      des: 'Description',
+      narx: 'Price',
+      bgc: 'Background',
+      rasm: 'Picture',
+      seq: 'Sequence',
+      yukla: 'Download',
+      sent: 'Sending',
     },
   },
 ]
