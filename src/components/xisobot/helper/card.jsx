@@ -29,15 +29,15 @@ function Card() {
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
       <li className="item">
-        <span>1 {Tillar[0][lang].hafta}: </span> <br /> {data?.hafta || 0}
+        <span>{Tillar[0][lang].hafta}: </span> <br /> {data?.hafta || 0}
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
       <li className="item">
-        <span>1 {Tillar[0][lang].oylik}:</span> <br /> {data?.hafta || 0}
+        <span>{Tillar[0][lang].oylik}:</span> <br /> {data?.hafta || 0}
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
       <li className="item">
-        <span>1 {Tillar[0][lang].yillik}: </span> <br /> {data?.hafta || 0}
+        <span>{Tillar[0][lang].yillik}: </span> <br /> {data?.hafta || 0}
         <img src={dark ? darkImage : image} alt="icon" />
       </li>
     </ul>
