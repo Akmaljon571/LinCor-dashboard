@@ -6,7 +6,7 @@ import Login from './components/auth/login'
 
 function App() {
   const { token } = useComponent()
-  return <>{token !== '' ? <LayoutMe /> : <Login/>}</>
+  return <>{token !== '' ? <LayoutMe /> : <Login />}</>
 }
 
 export default App

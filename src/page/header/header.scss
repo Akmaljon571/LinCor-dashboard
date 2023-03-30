@@ -40,7 +40,7 @@
   background-color: blue !important;
 }
 
-.hum{
+.hum {
   display: none;
 }
 
@@ -103,106 +103,102 @@
     gap: 32px;
   }
 
-  .header-til{
+  .header-til {
     color: #000000;
-    background-color:transparent ;
+    background-color: transparent;
     border: none;
   }
 
-  .sun{
+  .sun {
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
     padding: 9px;
     cursor: pointer;
   }
-
 }
 
-// Stils 
-.header_father-dark{
-  background-color: #10101C !important;
+// Stils
+.header_father-dark {
+  background-color: #10101c !important;
   background-color: #161624 !important;
-  
-  & *{
+
+  & * {
     color: #fff !important;
   }
-  
-  & .sun{
+
+  & .sun {
     background-color: #222235;
   }
 }
 
 // Dark
 
-
-@media only screen and (max-width:1020px) {
-  .header_data{
+@media only screen and (max-width: 1020px) {
+  .header_data {
     font-size: 20px !important;
   }
 
-  .header_h11{
+  .header_h11 {
     font-size: 30px !important;
   }
 }
 
-@media only screen and (max-width:900px) {
-  .sun{
+@media only screen and (max-width: 900px) {
+  .sun {
     padding: 5px !important;
   }
 
-  .header_data{
+  .header_data {
     font-size: 15px !important;
     position: absolute;
     right: 180px;
     top: 10px;
   }
 
-  .soat{
+  .soat {
     top: 30px;
   }
 }
 
-@media only screen and (max-width:700px) {
-  .header_data{
+@media only screen and (max-width: 700px) {
+  .header_data {
     display: none;
   }
-
-  
 }
 
-@media only screen and (max-width:600px) {
-
-  .header_father{
-    background-color: #2F49D1 !important;
+@media only screen and (max-width: 600px) {
+  .header_father {
+    background-color: #2f49d1 !important;
 
     & * {
       color: #fff !important;
     }
   }
 
-  .header_father-dark{
+  .header_father-dark {
     background-color: #161637 !important;
-  } 
-
-  .hum{
-     display: inline-block;
-     cursor: pointer;
   }
 
-  .ant-layout-sider{
+  .hum {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .ant-layout-sider {
     display: none;
-   }
+  }
 }
 
-@media only screen and (max-width:420px) {
-  .header-til{
+@media only screen and (max-width: 420px) {
+  .header-til {
     display: none;
   }
 
-  .sun , .sun-img{
+  .sun,
+  .sun-img {
     display: none !important;
   }
 }

@@ -11,7 +11,7 @@ const arr = [
       jami: 'Jami foydalanuvchilar',
       active: 'Faollar',
       hafta: 'Haftalik Daromad',
-      oyli: 'Oylik Daromad',
+      oylik: 'Oylik Daromad',
       yillik: 'Yillik Daromad',
     },
 
@@ -26,7 +26,7 @@ const arr = [
       jami: 'Всего Пользователей',
       active: 'Активы',
       hafta: 'Еженедельный Доход',
-      oyli: 'Ежемесячный Доход',
+      oylik: 'Ежемесячный Доход',
       yillik: 'Годовой доход',
     },
 
@@ -41,7 +41,7 @@ const arr = [
       jami: 'Total Users',
       active: 'Active',
       hafta: 'Weekly income',
-      oyli: 'Monthly Income',
+      oylik: 'Monthly Income',
       yillik: 'Annual Income',
     },
   },

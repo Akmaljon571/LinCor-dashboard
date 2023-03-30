@@ -6,7 +6,7 @@ import { SendOutlined } from '@ant-design/icons'
 import { Button, notification } from 'antd'
 import { SmileOutlined } from '@ant-design/icons'
 import useComponent from '../../hooks/useComponent'
-import { apiGet, host } from '../../utils/api'
+import { host } from '../../utils/api'
 
 function Login() {
   const navigate = useNavigate()
@@ -52,8 +52,8 @@ function Login() {
         },
         body: JSON.stringify({
           password,
-          email
-        })
+          email,
+        }),
       })
         .then((re) => re.json())
         .then((data) => {
@@ -156,9 +156,9 @@ function Login() {
     }
 
     fetch(host + '/users/admin/login/email/' + input)
-    .then(re => re.json())
+      .then((re) => re.json())
       .then((data) => {
-        if (data.status == 200) {
+        if (data.status === 200) {
           setToken(data.token)
           localStorage.clear()
           localStorage.setItem('admin_token', JSON.stringify(data.token))

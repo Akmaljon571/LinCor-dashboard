@@ -3,13 +3,13 @@ import Routerr from '../../routes/router'
 import './main.scss'
 
 function MainMe() {
-    const { dark } = useStart()
+  const { dark } = useStart()
 
-    return (
-        <div className={dark ? 'main_dark' : 'main'}> 
-           <Routerr/>
-        </div>
-    )
+  return (
+    <div className={dark ? 'main_dark' : 'main'}>
+      <Routerr />
+    </div>
+  )
 }
 
 export default MainMe

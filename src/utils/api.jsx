@@ -4,8 +4,8 @@ export const apiGet = (url, token, method = 'GET') => {
   return fetch(host + url, {
     method: `${method}`,
     headers: {
-      'Content-Type': 'application/json',
       'autharization': token,
+      'Content-Type': 'application/json',
     },
   })
 }

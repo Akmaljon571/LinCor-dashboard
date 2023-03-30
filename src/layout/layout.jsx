@@ -75,11 +75,6 @@ const LayoutMe = () => {
         navigate('video')
         localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].guruh))
         break
-      case 'Video':
-        setNav('video')
-        navigate('video')
-        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].guruh))
-        break
       case 'Ish kitobi':
         setNav('kitob')
         navigate('kitob')
@@ -113,20 +108,25 @@ const LayoutMe = () => {
       case 'Sozlash':
         setNav('sozlash')
         navigate('sozlash')
-        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].davoma))
+        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].sozla))
         break
       case 'Настройка':
         setNav('sozlash')
         navigate('sozlash')
-        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].davoma))
+        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].sozla))
         break
       case 'Setting':
         setNav('sozlash')
         navigate('sozlash')
-        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].davoma))
+        localStorage.setItem('xisobos', JSON.stringify(Tillar[0]['uz'].sozla))
+        break
+      default:
+        setNav('404')
+        navigate('404')
+        localStorage.setItem('xisobos', JSON.stringify('404'))
         break
     }
-  }, [head, lang])
+  }, [head, lang, setNav, navigate])
   // til ozgarsa ham bir xil pagega ketishini kuzatuvchi
 
   useEffect(() => {
