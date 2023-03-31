@@ -22,7 +22,8 @@ const arr = [
       seq: 'Ketma-ketlik',
       yukla: 'Yuklash',
       sent: 'Yuborish',
-
+      addVideo: 'Yangi Video qo’shish',
+      duration: 'Davomiyligi',
     },
 
     ru: {
@@ -47,6 +48,8 @@ const arr = [
       seq: 'Последовательность',
       yukla: 'Загрузить',
       sent: 'Отправка',
+      addVideo: 'Добавить новое Bидео',
+      duration: 'Продолжительность',
     },
 
     en: {
@@ -71,6 +74,8 @@ const arr = [
       seq: 'Sequence',
       yukla: 'Download',
       sent: 'Sending',
+      addVideo: 'Add a new Video',
+      duration: 'Duration',
     },
   },
 ]
