@@ -14,15 +14,18 @@ function InputVideo() {
   const rasmi = useRef()
   const seq = useRef()
   const { lang } = useStart()
-  const { token, setCount, count } = useComponent()
+  const { token, setCount, count, setCourseId } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
   const [course, setCourse] = useState([])
 
   useEffect(() => {
     apiGet('/courses', token)
       .then((re) => re.json())
-      .then((data) => setCourse(data))
-  }, [setCourse, token, count])
+      .then((data) => {
+        setCourse(data)
+        setCourseId(data[0]?.course_id)
+      })
+  }, [setCourse, token, count, setCourseId])
 
   const sent = () => {
     const title = sar.current.value
@@ -131,6 +134,15 @@ function InputVideo() {
         {contextHolder}
         <button onClick={sent}>{Tillar[0][lang].sent}</button>
       </div>
+      <select className='videoSelect' onClick={(e) => setCourseId(e?.target?.value)}>
+        {course.length
+          ? course.map((e, i) => (
+              <option key={i} value={e?.course_id}>
+                {e?.course_title}
+              </option>
+            ))
+          : null}
+      </select>
     </>
   )
 }

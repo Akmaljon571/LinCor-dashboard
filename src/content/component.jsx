@@ -8,7 +8,8 @@ export const StatPriveder = ({ children }) => {
   )
   const [count, setCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [coursId, setCourseId] = useState(false);
 
-  const data = { token, setToken, count, setCount, openModal, setOpenModal }
+  const data = { token, setToken, count, setCount, openModal, setOpenModal, coursId, setCourseId }
   return <State.Provider value={data}>{children}</State.Provider>
 }

@@ -67,7 +67,7 @@ function ListCourse() {
                   <span>{Tillar[0][lang].guruh}:</span> {e?.videos_count}ta
                 </p>
                 <p>
-                  <span>{Tillar[0][lang].des}:</span>{' '}
+                  <span>{Tillar[0][lang].des}:</span>
                   <i style={{ textAlign: 'end' }}>{e?.course_description}</i>
                 </p>
                 <b>
