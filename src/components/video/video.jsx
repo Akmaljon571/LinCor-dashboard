@@ -1,6 +1,7 @@
 import './dark.scss'
 import InputVideo from './helper/input'
 import ListVideo from './helper/list'
+import ModalVideo from './helper/modal'
 import './video.scss'
 
 function Video() {
@@ -8,6 +9,7 @@ function Video() {
     <>
       <InputVideo />
       <ListVideo />
+      <ModalVideo />
     </>
   )
 }

@@ -6,7 +6,7 @@ import yukla from '../../../img/bx_download.svg'
 import { message } from 'antd'
 import { host } from '../../../utils/api'
 
-const ModalApp = () => {
+const ModalVideo = ({ children }) => {
   const sar = useRef()
   const des = useRef()
   const pri = useRef()
@@ -14,11 +14,11 @@ const ModalApp = () => {
   const rasmi = useRef()
   const seq = useRef()
   const { lang } = useStart()
-  const { token, setCount, count, openModal, setOpenModal } = useComponent()
+  const { token, setCount, count, videoModal, setVideoModal } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
 
   const handleOk = () => {
-    setOpenModal(false)
+    setVideoModal(false)
     const title = sar.current.value
     const description = des.current.value
     const price = pri.current.value
@@ -34,11 +34,12 @@ const ModalApp = () => {
     const formData = new FormData()
     formData.append('file', file)
     formData.append('title', title)
-    formData.append('price', price)
-    formData.append('bgcolor', bgcolor)
-    formData.append('sequence', sequence)
     formData.append('description', description)
-    fetch(host + '/courses/update/' + openModal?.course_id, {
+    formData.append('sequence', sequence)
+    formData.append('duration', price)
+    formData.append('course_id', bgcolor)
+
+    fetch(host + '/video/update/' + videoModal?.video_id, {
       method: 'PATCH',
       headers: {
         autharization: token,
@@ -69,13 +70,13 @@ const ModalApp = () => {
   }
 
   const handleCancel = () => {
-    setOpenModal(false)
+    setVideoModal(false)
   }
 
   return (
     <>
-      <b onClick={handleCancel} className={!openModal ? 'none' : 'b'}></b>
-      <div className={!openModal ? 'none' : 'modal_course'}>
+      <b onClick={handleCancel} className={!videoModal ? 'none' : 'b'}></b>
+      <div className={!videoModal ? 'none' : 'modal_course'}>
         <ul>
           <li>
             <span>{Tillar[0][lang].title}</span>
@@ -116,4 +117,4 @@ const ModalApp = () => {
   )
 }
 
-export default ModalApp
+export default ModalVideo

@@ -1,5 +1,5 @@
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
-import { message } from 'antd'
+import { Popconfirm, message } from 'antd'
 import { useEffect, useState } from 'react'
 import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
@@ -9,7 +9,7 @@ import { Button, Result } from 'antd'
 
 function ListVideo() {
   const { lang } = useStart()
-  const { token, setCount, count, coursId, setCourseId } = useComponent()
+  const { token, setCount, count, coursId, setVideoModal } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
   const [video, setVideo] = useState([])
   const key = 'updatable'
@@ -21,6 +21,7 @@ function ListVideo() {
   }, [coursId, count, setVideo, token])
 
   const videoDelete = (id) => {
+    console.log(id)
     messageApi.open({
       key,
       type: 'loading',
@@ -48,8 +49,13 @@ function ListVideo() {
     })
   }
 
+  const cancel = (e) => {
+    message.error('Click on No');
+  };
+
   return (
     <>
+      {contextHolder}
       <table>
         <thead>
           <tr>
@@ -62,8 +68,8 @@ function ListVideo() {
             <th className="th">Delete</th>
           </tr>
         </thead>
-          <tbody>
-        {video.length ? (
+        <tbody>
+          {video.length ? (
             video.map((e, i) => (
               <tr key={i}>
                 <td>{i + 1}</td>
@@ -73,37 +79,44 @@ function ListVideo() {
                 <td>{e.video_description}</td>
                 <td>
                   <EditOutlined
-                    // onClick={() => setOpenModal(e)}
+                    onClick={() => setVideoModal(e)}
                     style={{ cursor: 'pointer', fontSize: '25px' }}
                   />
                 </td>
                 <td>
-                  <DeleteOutlined
-                    onClick={() => videoDelete(e.course_id)}
-                    style={{
-                      color: 'red',
-                      cursor: 'pointer',
-                      fontSize: '25px',
-                    }}
-                  />
+                  <Popconfirm
+                    title="O'chirmoqchimisz?"
+                    onConfirm={() => videoDelete(e.video_id)}
+                    onCancel={cancel}
+                    okText="Yes"
+                    cancelText="No"
+                  >
+                    <DeleteOutlined
+                      style={{
+                        color: 'red',
+                        cursor: 'pointer',
+                        fontSize: '32px',
+                      }}
+                    />
+                  </Popconfirm>
                 </td>
               </tr>
             ))
-            ) : (
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
+          ) : (
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
                 <Result
                   status="404"
                   title="404"
                   subTitle="Sorry, the page you visited does not exist."
                 />
-                </td>
-              </tr>
-            )}
-          </tbody>
+              </td>
+            </tr>
+          )}
+        </tbody>
       </table>
     </>
   )
