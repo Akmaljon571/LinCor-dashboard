@@ -55,7 +55,7 @@ function TakeInput () {
       })
         .then(re => re.json())
         .then(data => {
-          if (data.status === 200) {
+          if (data.status === 201) {
             setCount(count + 1)
             setTimeout(() => {
               messageApi.open({
