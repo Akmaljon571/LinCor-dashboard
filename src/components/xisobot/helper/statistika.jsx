@@ -10,8 +10,8 @@ import {
   Legend,
   registerables,
 } from 'chart.js'
-import styles from '../xisobot.scss'
 import { Bar } from 'react-chartjs-2'
+import styles from '../xisobot.scss'
 import Tillar from '../../../languages/language'
 import useStart from '../../../hooks/useStart'
 

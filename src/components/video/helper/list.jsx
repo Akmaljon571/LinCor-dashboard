@@ -1,13 +1,12 @@
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
-import { Popconfirm, message } from 'antd'
+import { Popconfirm, message, Result } from 'antd'
 import { useEffect, useState } from 'react'
 import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import { apiGet } from '../../../utils/api'
-import { Result } from 'antd'
 
-function ListVideo() {
+function ListVideo () {
   const { lang } = useStart()
   const { token, setCount, count, coursId, setVideoModal } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
@@ -16,18 +15,18 @@ function ListVideo() {
 
   useEffect(() => {
     apiGet('/video/by_course/' + coursId, token)
-      .then((re) => re.json())
-      .then((data) => setVideo(data))
+      .then(re => re.json())
+      .then(data => setVideo(data))
   }, [coursId, count, setVideo, token])
 
-  const videoDelete = (id) => {
+  const videoDelete = id => {
     console.log(id)
     messageApi.open({
       key,
       type: 'loading',
-      content: 'Loading...',
+      content: 'Loading...'
     })
-    apiGet('/video/delete/' + id, token, 'DELETE').then((baza) => {
+    apiGet('/video/delete/' + id, token, 'DELETE').then(baza => {
       if (baza.ok) {
         setCount(count + 1)
         setTimeout(() => {
@@ -35,7 +34,7 @@ function ListVideo() {
             key,
             type: 'success',
             content: 'Loaded!',
-            duration: 2,
+            duration: 2
           })
         }, 1000)
       } else {
@@ -43,15 +42,15 @@ function ListVideo() {
           key,
           type: 'error',
           content: 'Loaded!',
-          duration: 2,
+          duration: 2
         })
       }
     })
   }
 
-  const cancel = (e) => {
-    message.error('Click on No');
-  };
+  const cancel = e => {
+    message.error('Click on No')
+  }
 
   return (
     <>
@@ -59,13 +58,13 @@ function ListVideo() {
       <table>
         <thead>
           <tr>
-            <th className="th">№</th>
-            <th className="th">{Tillar[0][lang].title}</th>
-            <th className="th">{Tillar[0][lang].seq}</th>
-            <th className="th">{Tillar[0][lang].duration}</th>
-            <th className="th">{Tillar[0][lang].des}</th>
-            <th className="th">Edit</th>
-            <th className="th">Delete</th>
+            <th className='th'>№</th>
+            <th className='th'>{Tillar[0][lang].title}</th>
+            <th className='th'>{Tillar[0][lang].seq}</th>
+            <th className='th'>{Tillar[0][lang].duration}</th>
+            <th className='th'>{Tillar[0][lang].des}</th>
+            <th className='th'>Edit</th>
+            <th className='th'>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -88,14 +87,14 @@ function ListVideo() {
                     title="O'chirmoqchimisz?"
                     onConfirm={() => videoDelete(e.video_id)}
                     onCancel={cancel}
-                    okText="Yes"
-                    cancelText="No"
+                    okText='Yes'
+                    cancelText='No'
                   >
                     <DeleteOutlined
                       style={{
                         color: 'red',
                         cursor: 'pointer',
-                        fontSize: '22px',
+                        fontSize: '22px'
                       }}
                     />
                   </Popconfirm>
@@ -109,9 +108,9 @@ function ListVideo() {
               <td></td>
               <td>
                 <Result
-                  status="404"
-                  title="404"
-                  subTitle="Sorry, the page you visited does not exist."
+                  status='404'
+                  title='404'
+                  subTitle='Sorry, the page you visited does not exist.'
                 />
               </td>
               <td></td>

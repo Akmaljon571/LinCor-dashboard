@@ -1,11 +1,10 @@
-import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
-import { Popconfirm, message } from 'antd'
+import { DeleteOutlined } from '@ant-design/icons'
+import { Popconfirm, message, Result } from 'antd'
 import { useEffect, useState } from 'react'
 import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import { apiGet, host } from '../../../utils/api'
-import { Result } from 'antd'
 
 function TakeList () {
   const { lang } = useStart()
@@ -28,17 +27,16 @@ function TakeList () {
     })
     console.log(takeId)
     fetch(host + '/courses_open_users/delete', {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            autharization: token
-        },
-        body: JSON.stringify({
-            userId, 
-            courseId: takeId
-        })
-    })
-    .then(baza => {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        autharization: token
+      },
+      body: JSON.stringify({
+        userId,
+        courseId: takeId
+      })
+    }).then(baza => {
       if (baza.ok) {
         setCount(count + 1)
         setTimeout(() => {

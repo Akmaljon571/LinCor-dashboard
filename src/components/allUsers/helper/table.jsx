@@ -1,11 +1,10 @@
-import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
-import { Popconfirm, message } from 'antd'
+import { DeleteOutlined } from '@ant-design/icons'
+import { Popconfirm, message, Result } from 'antd'
 import { useEffect, useState } from 'react'
 import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
-import { apiGet, host } from '../../../utils/api'
-import { Result } from 'antd'
+import { apiGet } from '../../../utils/api'
 
 function AllUserTable () {
   const { lang } = useStart()

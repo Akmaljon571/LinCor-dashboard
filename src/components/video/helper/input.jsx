@@ -6,7 +6,7 @@ import yukla from '../../../img/bx_download.svg'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 
-function InputVideo() {
+function InputVideo () {
   const sar = useRef()
   const des = useRef()
   const pri = useRef()
@@ -20,8 +20,8 @@ function InputVideo() {
 
   useEffect(() => {
     apiGet('/courses', token)
-      .then((re) => re.json())
-      .then((data) => {
+      .then(re => re.json())
+      .then(data => {
         setCourse(data)
         setCourseId(data[0]?.course_id)
       })
@@ -38,7 +38,7 @@ function InputVideo() {
     messageApi.open({
       key,
       type: 'loading',
-      content: 'Loading...',
+      content: 'Loading...'
     })
     if (title && description && price && bgcolor && sequence && file) {
       const formData = new FormData()
@@ -52,10 +52,10 @@ function InputVideo() {
       fetch(host + '/video/create', {
         method: 'POST',
         headers: {
-          autharization: token,
+          autharization: token
         },
-        body: formData,
-      }).then((data) => {
+        body: formData
+      }).then(data => {
         console.log(data)
         if (data.ok) {
           setCount(count + 1)
@@ -64,7 +64,7 @@ function InputVideo() {
               key,
               type: 'success',
               content: 'Loaded!',
-              duration: 2,
+              duration: 2
             })
           }, 1000)
         } else {
@@ -73,7 +73,7 @@ function InputVideo() {
               key,
               type: 'error',
               content: 'Loaded!',
-              duration: 2,
+              duration: 2
             })
           }, 1000)
         }
@@ -84,27 +84,27 @@ function InputVideo() {
           key,
           type: 'error',
           content: 'Loaded!',
-          duration: 2,
+          duration: 2
         })
       }, 1000)
     }
   }
   return (
     <>
-      <div className="inputs_course">
+      <div className='inputs_course'>
         <h1>{Tillar[0][lang].addVideo}</h1>
         <ul>
           <li>
             <span>{Tillar[0][lang].title}</span>
-            <input ref={sar} type="text" placeholder="3-dars" />
+            <input ref={sar} type='text' placeholder='3-dars' />
           </li>
           <li>
             <span>{Tillar[0][lang].des}</span>
-            <input ref={des} type="text" placeholder="Bugungi dars paloncha" />
+            <input ref={des} type='text' placeholder='Bugungi dars paloncha' />
           </li>
           <li>
             <span>{Tillar[0][lang].duration}</span>
-            <input ref={pri} type="text" placeholder="30:00" />
+            <input ref={pri} type='text' placeholder='30:00' />
           </li>
           <li>
             <span>{Tillar[0][lang].oqish}</span>
@@ -120,21 +120,24 @@ function InputVideo() {
           </li>
           <li>
             <span>{Tillar[0][lang].seq}</span>
-            <input ref={seq} type="number" placeholder="1" />
+            <input ref={seq} type='number' placeholder='1' />
           </li>
-          <li className="rasm">
+          <li className='rasm'>
             <span>{Tillar[0][lang].guruh}</span>
-            <label htmlFor="rasm">
+            <label htmlFor='rasm'>
               <i>{Tillar[0][lang].yukla}</i>
-              <img src={yukla} alt="yukla" />
+              <img src={yukla} alt='yukla' />
             </label>
-            <input id="rasm" ref={rasmi} className="none" type="file" />
+            <input id='rasm' ref={rasmi} className='none' type='file' />
           </li>
         </ul>
         {contextHolder}
         <button onClick={sent}>{Tillar[0][lang].sent}</button>
       </div>
-      <select className='videoSelect' onClick={(e) => setCourseId(e?.target?.value)}>
+      <select
+        className='videoSelect'
+        onClick={e => setCourseId(e?.target?.value)}
+      >
         {course.length
           ? course.map((e, i) => (
               <option key={i} value={e?.course_id}>

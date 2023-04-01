@@ -1,9 +1,9 @@
 import { useRef } from 'react'
+import { message } from 'antd'
 import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import yukla from '../../../img/bx_download.svg'
-import { message } from 'antd'
 import { host } from '../../../utils/api'
 
 const ModalApp = () => {
@@ -29,7 +29,7 @@ const ModalApp = () => {
     messageApi.open({
       key,
       type: 'loading',
-      content: 'Loading...',
+      content: 'Loading...'
     })
     const formData = new FormData()
     formData.append('file', file)
@@ -41,10 +41,10 @@ const ModalApp = () => {
     fetch(host + '/courses/update/' + openModal?.course_id, {
       method: 'PATCH',
       headers: {
-        autharization: token,
+        autharization: token
       },
-      body: formData,
-    }).then((data) => {
+      body: formData
+    }).then(data => {
       if (data.ok) {
         setCount(count + 1)
         setTimeout(() => {
@@ -52,7 +52,7 @@ const ModalApp = () => {
             key,
             type: 'success',
             content: 'Loaded!',
-            duration: 2,
+            duration: 2
           })
         }, 1000)
       } else {
@@ -61,12 +61,12 @@ const ModalApp = () => {
             key,
             type: 'error',
             content: 'Loaded!',
-            duration: 2,
+            duration: 2
           })
         }, 1000)
       }
     })
-    
+
     sar.current.value = ''
     des.current.value = ''
     pri.current.value = ''
@@ -85,34 +85,34 @@ const ModalApp = () => {
         <ul>
           <li>
             <span>{Tillar[0][lang].title}</span>
-            <input ref={sar} type="text" placeholder="Topik 1" />
+            <input ref={sar} type='text' placeholder='Topik 1' />
           </li>
           <li>
             <span>{Tillar[0][lang].des}</span>
-            <input ref={des} type="text" placeholder="Kurs haqida qisqacha" />
+            <input ref={des} type='text' placeholder='Kurs haqida qisqacha' />
           </li>
           <li>
             <span>{Tillar[0][lang].narx}</span>
-            <input ref={pri} type="text" placeholder="1 000 000" />
+            <input ref={pri} type='text' placeholder='1 000 000' />
           </li>
           <li>
             <span>{Tillar[0][lang].bgc}</span>
             <select ref={bgc}>
-              <option value="#1D68F9">#1D68F9</option>
-              <option value="#FF9D7B">#FF9D7B</option>
+              <option value='#1D68F9'>#1D68F9</option>
+              <option value='#FF9D7B'>#FF9D7B</option>
             </select>
           </li>
           <li>
             <span>{Tillar[0][lang].seq}</span>
-            <input ref={seq} type="number" placeholder="1" />
+            <input ref={seq} type='number' placeholder='1' />
           </li>
-          <li className="rasm">
+          <li className='rasm'>
             <span>{Tillar[0][lang].rasm}</span>
-            <label htmlFor="rasm2">
+            <label htmlFor='rasm2'>
               <i>{Tillar[0][lang].yukla}</i>
-              <img src={yukla} alt="yukla" />
+              <img src={yukla} alt='yukla' />
             </label>
-            <input id="rasm2" ref={rasmi} className="none" type="file" />
+            <input id='rasm2' ref={rasmi} className='none' type='file' />
           </li>
         </ul>
         <button onClick={handleOk}>{Tillar[0][lang].sent}</button>

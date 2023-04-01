@@ -7,26 +7,26 @@ import Tillar from '../../../languages/language'
 import { apiGet, img_link } from '../../../utils/api'
 import ModalApp from './modal'
 
-function ListCourse() {
+function ListCourse () {
   const { lang } = useStart()
   const { token, count, setCount, setOpenModal } = useComponent()
   const [data, setData] = useState([])
 
   useEffect(() => {
     apiGet('/courses', token)
-      .then((re) => re.json())
-      .then((baza) => setData(baza))
+      .then(re => re.json())
+      .then(baza => setData(baza))
   }, [setData, count, token])
   const [messageApi, contextHolder] = message.useMessage()
   const key = 'updatable'
 
-  const CourseDelete = (id) => {
+  const CourseDelete = id => {
     messageApi.open({
       key,
       type: 'loading',
-      content: 'Loading...',
+      content: 'Loading...'
     })
-    apiGet('/courses/delete/' + id, token, 'DELETE').then((baza) => {
+    apiGet('/courses/delete/' + id, token, 'DELETE').then(baza => {
       if (baza.ok) {
         setCount(count + 1)
         setTimeout(() => {
@@ -34,7 +34,7 @@ function ListCourse() {
             key,
             type: 'success',
             content: 'Loaded!',
-            duration: 2,
+            duration: 2
           })
         }, 1000)
       } else {
@@ -42,61 +42,61 @@ function ListCourse() {
           key,
           type: 'error',
           content: 'Loaded!',
-          duration: 2,
+          duration: 2
         })
       }
     })
   }
 
-  const cancel = (e) => {
-    message.error('Click on No');
-  };
+  const cancel = e => {
+    message.error('Click on No')
+  }
 
   return (
-    <div className="list_course">
+    <div className='list_course'>
       <h1>{Tillar[0][lang].mCourse}</h1>
-      <ul className="top">
+      <ul className='top'>
         {data.length
           ? data.map((e, i) => (
-            <li style={{ backgroundColor: e?.course_bgc }} key={i}>
-              <h2>{e?.course_title}</h2>
-              <img src={img_link + e?.course_link} alt="course" />
-              <p>
-                <span>{Tillar[0][lang].narx}:</span> {e?.course_price}sum
-              </p>
-              <p>
-                <span>{Tillar[0][lang].seq}:</span> {e?.course_sequence}chi
-              </p>
-              <p>
-                <span>{Tillar[0][lang].guruh}:</span> {e?.videos_count}ta
-              </p>
-              <p>
-                <span>{Tillar[0][lang].des}:</span>
-                <i style={{ textAlign: 'end' }}>{e?.course_description}</i>
-              </p>
-              <b>
-                <EditOutlined
-                  onClick={() => setOpenModal(e)}
-                  style={{ cursor: 'pointer', fontSize: '32px' }}
-                />
-                <Popconfirm
-                  title="O'chirmoqchimisz?"
-                  onConfirm={() => CourseDelete(e.course_id)}
-                  onCancel={cancel}
-                  okText="Yes"
-                  cancelText="No"
-                >
-                  <DeleteOutlined
-                    style={{
-                      color: 'red',
-                      cursor: 'pointer',
-                      fontSize: '32px',
-                    }}
+              <li style={{ backgroundColor: e?.course_bgc }} key={i}>
+                <h2>{e?.course_title}</h2>
+                <img src={img_link + e?.course_link} alt='course' />
+                <p>
+                  <span>{Tillar[0][lang].narx}:</span> {e?.course_price}sum
+                </p>
+                <p>
+                  <span>{Tillar[0][lang].seq}:</span> {e?.course_sequence}chi
+                </p>
+                <p>
+                  <span>{Tillar[0][lang].guruh}:</span> {e?.videos_count}ta
+                </p>
+                <p>
+                  <span>{Tillar[0][lang].des}:</span>
+                  <i style={{ textAlign: 'end' }}>{e?.course_description}</i>
+                </p>
+                <b>
+                  <EditOutlined
+                    onClick={() => setOpenModal(e)}
+                    style={{ cursor: 'pointer', fontSize: '32px' }}
                   />
-                </Popconfirm>
-              </b>
-            </li>
-          ))
+                  <Popconfirm
+                    title="O'chirmoqchimisz?"
+                    onConfirm={() => CourseDelete(e.course_id)}
+                    onCancel={cancel}
+                    okText='Yes'
+                    cancelText='No'
+                  >
+                    <DeleteOutlined
+                      style={{
+                        color: 'red',
+                        cursor: 'pointer',
+                        fontSize: '32px'
+                      }}
+                    />
+                  </Popconfirm>
+                </b>
+              </li>
+            ))
           : null}
       </ul>
       {contextHolder}

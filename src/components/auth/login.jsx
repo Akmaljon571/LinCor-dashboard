@@ -1,21 +1,21 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './login.scss'
-import logo from '../../img/lincor.svg'
 import { SendOutlined } from '@ant-design/icons'
 import { Button, notification } from 'antd'
 import { SmileOutlined } from '@ant-design/icons'
+import logo from '../../img/lincor.svg'
 import useComponent from '../../hooks/useComponent'
 import { host } from '../../utils/api'
+import './login.scss'
 
-function Login() {
+function Login () {
   const navigate = useNavigate()
   const [error, setError] = useState(false)
   const [parol, setParol] = useState(
-    JSON.parse(localStorage.getItem('loginParol')) || false,
+    JSON.parse(localStorage.getItem('loginParol')) || false
   )
   const [sekunt, setSekunt] = useState(
-    JSON.parse(localStorage.getItem('loginParol')) || '4:00',
+    JSON.parse(localStorage.getItem('loginParol')) || '4:00'
   )
   const { setToken } = useComponent()
   const emailInput = useRef()
@@ -25,14 +25,14 @@ function Login() {
   const [api, contextHolder] = notification.useNotification()
   const inputParol = useRef()
 
-  const enterLoading = (index) => {
-    setLoadings((prevLoadings) => {
+  const enterLoading = index => {
+    setLoadings(prevLoadings => {
       const newLoadings = [...prevLoadings]
       newLoadings[index] = true
       return newLoadings
     })
     setTimeout(() => {
-      setLoadings((prevLoadings) => {
+      setLoadings(prevLoadings => {
         const newLoadings = [...prevLoadings]
         newLoadings[index] = false
         return newLoadings
@@ -48,15 +48,15 @@ function Login() {
       fetch(host + '/users/admin/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           password,
-          email,
-        }),
+          email
+        })
       })
-        .then((re) => re.json())
-        .then((data) => {
+        .then(re => re.json())
+        .then(data => {
           if (data.status === 200) {
             setParol(true)
             localStorage.setItem('loginParol', JSON.stringify('4:00'))
@@ -67,10 +67,10 @@ function Login() {
               icon: (
                 <SmileOutlined
                   style={{
-                    color: '#108ee9',
+                    color: '#108ee9'
                   }}
                 />
-              ),
+              )
             })
           } else {
             api.open({
@@ -80,10 +80,10 @@ function Login() {
               icon: (
                 <SmileOutlined
                   style={{
-                    color: '#FF0000',
+                    color: '#FF0000'
                   }}
                 />
-              ),
+              )
             })
           }
         })
@@ -94,10 +94,10 @@ function Login() {
         icon: (
           <SmileOutlined
             style={{
-              color: '#FF0000',
+              color: '#FF0000'
             }}
           />
-        ),
+        )
       })
       setError(true)
 
@@ -148,16 +148,16 @@ function Login() {
         icon: (
           <SmileOutlined
             style={{
-              color: '#FF0000',
+              color: '#FF0000'
             }}
           />
-        ),
+        )
       })
     }
 
     fetch(host + '/users/admin/login/email/' + input)
-      .then((re) => re.json())
-      .then((data) => {
+      .then(re => re.json())
+      .then(data => {
         if (data.status === 200) {
           setToken(data.token)
           localStorage.clear()
@@ -170,46 +170,46 @@ function Login() {
             icon: (
               <SmileOutlined
                 style={{
-                  color: '#FF0000',
+                  color: '#FF0000'
                 }}
               />
-            ),
+            )
           })
         }
       })
   }
 
   return (
-    <div className="login">
-      <div className="left">
-        <img src={logo} alt="" />
+    <div className='login'>
+      <div className='left'>
+        <img src={logo} alt='' />
       </div>
-      <div className="right">
-        <h1 className="signIn">Sign In</h1>
+      <div className='right'>
+        <h1 className='signIn'>Sign In</h1>
         <div className={parol ? 'disablet' : 'divInput'}>
           <input
             disabled={parol}
             className={error ? 'error' : ''}
             ref={emailInput}
-            type="text"
-            placeholder="@gmail.com"
+            type='text'
+            placeholder='@gmail.com'
           />
           <input
             disabled={parol}
             className={error ? 'error' : ''}
             ref={passwordInput}
-            type="text"
-            placeholder="Password"
+            type='text'
+            placeholder='Password'
           />
         </div>
         <div className={parol ? 'parol' : 'none'}>
           <span className={finish ? 'finish' : ''}>{'0' + sekunt}</span>
-          <input ref={inputParol} type="number" placeholder="12345" />
+          <input ref={inputParol} type='number' placeholder='12345' />
         </div>
         {contextHolder}
         <Button
-          className="sendButton"
-          type="primary"
+          className='sendButton'
+          type='primary'
           loading={loadings[2]}
           icon={<SendOutlined />}
           onClick={parol ? emailParol : login}

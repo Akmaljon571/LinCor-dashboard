@@ -1,11 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { message } from 'antd'
 import Tillar from '../../../languages/language'
 import useStart from '../../../hooks/useStart'
 import { apiGet, host } from '../../../utils/api'
 import useComponent from '../../../hooks/useComponent'
-import { useEffect } from 'react'
-import { useRef } from 'react'
-import { message } from 'antd'
 
 function TakeInput () {
   const [user, setUser] = useState([])
@@ -112,10 +110,7 @@ function TakeInput () {
         </select>
       </div>
       <button onClick={send}>{Tillar[0][lang].sent}</button>
-      <select
-        className='take_select'
-        onChange={w => take(w.target?.value)}
-      >
+      <select className='take_select' onChange={w => take(w.target?.value)}>
         {course.map(e => (
           <option key={e?.course_id} value={e.course_id}>
             {e.course_title}

@@ -1,14 +1,12 @@
-import { useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { message } from 'antd'
 import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import yukla from '../../../img/bx_download.svg'
-import { message } from 'antd'
 import { apiGet, host } from '../../../utils/api'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
-const ModalVideo = ({ children }) => {
+const ModalVideo = () => {
   const sar = useRef()
   const des = useRef()
   const pri = useRef()

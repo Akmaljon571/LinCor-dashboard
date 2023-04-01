@@ -1,7 +1,6 @@
 import { Result } from 'antd'
 
 function Error () {
-
   return (
     <Result
       status='404'
