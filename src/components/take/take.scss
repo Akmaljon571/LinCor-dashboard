@@ -1,4 +1,6 @@
 .take_input {
+    position: relative;
+    
     div {
         display: flex;
         align-items: center;
@@ -25,7 +27,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        right: 121px;
+        right: 101px;
         margin-top: 32px;
         cursor: pointer;
     }
@@ -44,9 +46,14 @@
         text-align: left;
         height: 48px;
         padding: 13px;
-        outline: none;        
+        outline: none;
         cursor: pointer;
     }
+}
+
+.take_select {
+    margin-top: 180px;
+    width: 280px !important;
 }
 
 @media screen and (max-width: 1207px) {
@@ -56,7 +63,7 @@
             margin-top: 50px;
         }
 
-        button{
+        button {
             right: 25px;
         }
     }
@@ -72,7 +79,7 @@
             font-size: 15px;
         }
 
-        button{
+        button {
             width: 150px;
         }
     }

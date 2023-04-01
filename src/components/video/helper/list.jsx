@@ -5,7 +5,7 @@ import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import { apiGet } from '../../../utils/api'
-import { Button, Result } from 'antd'
+import { Result } from 'antd'
 
 function ListVideo() {
   const { lang } = useStart()

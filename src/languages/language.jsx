@@ -25,6 +25,10 @@ const arr = [
       addVideo: 'Yangi Video qo’shish',
       duration: 'Davomiyligi',
       mCourse: 'Mavjud Kurslar',
+      ismi: 'Ismi',
+      familiyasi: 'Familiya',
+      email: 'Email',
+      active: 'Active',
     },
 
     ru: {
@@ -52,6 +56,10 @@ const arr = [
       addVideo: 'Добавить новое Bидео',
       duration: 'Продолжительность',
       mCourse: 'Доступные курсы',
+      ismi: 'Имя',
+      familiyasi: 'Фамилия',
+      email: 'Электронная почта',
+      active: 'Активный',
     },
 
     en: {
@@ -79,6 +87,10 @@ const arr = [
       addVideo: 'Add a new Video',
       duration: 'Duration',
       mCourse: 'Available Courses',
+      ismi: 'Name',
+      familiyasi: 'Surname',
+      email: 'Email',
+      active: 'Active',
     },
   },
 ]

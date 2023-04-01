@@ -10,7 +10,8 @@ export const StatPriveder = ({ children }) => {
   const [openModal, setOpenModal] = useState(false);
   const [coursId, setCourseId] = useState(false);
   const [videoModal, setVideoModal] = useState(false);
+  const [takeId, setTakeId] = useState(false);
 
-  const data = { token, setToken, count, setCount, openModal, setOpenModal, coursId, setCourseId, videoModal, setVideoModal }
+  const data = { token, setToken, count, setCount, openModal, setOpenModal, coursId, setCourseId, videoModal, setVideoModal, takeId, setTakeId }
   return <State.Provider value={data}>{children}</State.Provider>
 }

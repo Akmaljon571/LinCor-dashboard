@@ -1,15 +1,15 @@
 import './take.scss'
 import './dark.scss'
-import TakeInput from './helper';
-import TakeList from './helper/list';
+import TakeInput from './helper'
+import TakeList from './helper/list'
 
-function Take() {
-    return (  
-        <>
-            <TakeInput/>
-            <TakeList/>
-        </>
-    );
+function Take () {
+  return (
+    <>
+      <TakeInput />
+      <TakeList />
+    </>
+  )
 }
 
-export default Take;
+export default Take

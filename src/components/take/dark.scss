@@ -1,18 +1,28 @@
 .main_dark {
-    input, select {
-        background: #515c8d;
-        color: #fff;
-        &::-webkit-input-placeholder {
-          color: #ffffffc2;
-        }
-        &::-moz-placeholder {
-          color: #ffffffc2;
-        }
-        &:-ms-input-placeholder {
-          color: #ffffffc2;
-        }
-        &:-moz-placeholder {
-          color: #ffffffc2;
-        }
+
+  input,
+  select {
+    background: #515c8d;
+    color: #fff;
+
+    &::-webkit-input-placeholder {
+      color: #ffffffc2;
     }
+
+    &::-moz-placeholder {
+      color: #ffffffc2;
+    }
+
+    &:-ms-input-placeholder {
+      color: #ffffffc2;
+    }
+
+    &:-moz-placeholder {
+      color: #ffffffc2;
+    }
+  }
+
+  div {
+    color: #fff;
+  }
 }
