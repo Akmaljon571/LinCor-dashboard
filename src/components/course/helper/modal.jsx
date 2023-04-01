@@ -66,6 +66,12 @@ const ModalApp = () => {
         }, 1000)
       }
     })
+    
+    sar.current.value = ''
+    des.current.value = ''
+    pri.current.value = ''
+    bgc.current.value = ''
+    seq.current.value = ''
   }
 
   const handleCancel = () => {

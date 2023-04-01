@@ -4,7 +4,9 @@ import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import yukla from '../../../img/bx_download.svg'
 import { message } from 'antd'
-import { host } from '../../../utils/api'
+import { apiGet, host } from '../../../utils/api'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 const ModalVideo = ({ children }) => {
   const sar = useRef()
@@ -14,8 +16,19 @@ const ModalVideo = ({ children }) => {
   const rasmi = useRef()
   const seq = useRef()
   const { lang } = useStart()
-  const { token, setCount, count, videoModal, setVideoModal } = useComponent()
+  const { token, setCount, count, videoModal, setVideoModal, setCourseId } = useComponent()
   const [messageApi, contextHolder] = message.useMessage()
+  const [course, setCourse] = useState([])
+
+  useEffect(() => {
+    apiGet('/courses', token)
+      .then((re) => re.json())
+      .then((data) => {
+        setCourse(data)
+        setCourseId(data[0]?.course_id)
+      })
+  }, [setCourse, token, count, setCourseId])
+
 
   const handleOk = () => {
     setVideoModal(false)
@@ -67,6 +80,12 @@ const ModalVideo = ({ children }) => {
         }, 1000)
       }
     })
+
+    sar.current.value = ''
+    des.current.value = ''
+    pri.current.value = ''
+    bgc.current.value = ''
+    seq.current.value = ''
   }
 
   const handleCancel = () => {
@@ -77,24 +96,30 @@ const ModalVideo = ({ children }) => {
     <>
       <b onClick={handleCancel} className={!videoModal ? 'none' : 'b'}></b>
       <div className={!videoModal ? 'none' : 'modal_course'}>
-        <ul>
+      <ul>
           <li>
             <span>{Tillar[0][lang].title}</span>
-            <input ref={sar} type="text" placeholder="Topik 1" />
+            <input ref={sar} type="text" placeholder="3-dars" />
           </li>
           <li>
             <span>{Tillar[0][lang].des}</span>
-            <input ref={des} type="text" placeholder="Kurs haqida qisqacha" />
+            <input ref={des} type="text" placeholder="Bugungi dars paloncha" />
           </li>
           <li>
-            <span>{Tillar[0][lang].narx}</span>
-            <input ref={pri} type="text" placeholder="1 000 000" />
+            <span>{Tillar[0][lang].duration}</span>
+            <input ref={pri} type="text" placeholder="30:00" />
           </li>
           <li>
-            <span>{Tillar[0][lang].bgc}</span>
+            <span>{Tillar[0][lang].oqish}</span>
             <select ref={bgc}>
-              <option value="#1D68F9">#1D68F9</option>
-              <option value="#FF9D7B">#FF9D7B</option>
+              <option value="" disabled hidden>Choose here</option>
+              {course.length
+                ? course.map((e, i) => (
+                    <option key={i} value={e?.course_id}>
+                      {e?.course_title}
+                    </option>
+                  ))
+                : null}
             </select>
           </li>
           <li>
@@ -102,12 +127,12 @@ const ModalVideo = ({ children }) => {
             <input ref={seq} type="number" placeholder="1" />
           </li>
           <li className="rasm">
-            <span>{Tillar[0][lang].rasm}</span>
-            <label htmlFor="rasm2">
+            <span>{Tillar[0][lang].guruh}</span>
+            <label htmlFor="rasm">
               <i>{Tillar[0][lang].yukla}</i>
-              <img src={yukla} alt="yukla" />
+              <img style={{marginBottom: '10px'}} src={yukla} alt="yukla" />
             </label>
-            <input id="rasm2" ref={rasmi} className="none" type="file" />
+            <input id="rasm" ref={rasmi} className="none" type="file" />
           </li>
         </ul>
         <button onClick={handleOk}>{Tillar[0][lang].sent}</button>
