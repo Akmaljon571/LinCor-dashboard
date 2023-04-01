@@ -115,7 +115,6 @@ function TakeInput () {
       <select
         className='take_select'
         onChange={w => take(w.target?.value)}
-        ref={findCourse}
       >
         {course.map(e => (
           <option key={e?.course_id} value={e.course_id}>
