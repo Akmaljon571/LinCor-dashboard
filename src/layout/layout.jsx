@@ -145,6 +145,7 @@ const LayoutMe = () => {
           'xisobos',
           JSON.stringify(Tillar[0]['uz'].allUsers)
         )
+        break
       case 'Ochiq Kitob':
         setNav('open')
         navigate('open')

@@ -95,7 +95,7 @@ function ListVideo() {
                       style={{
                         color: 'red',
                         cursor: 'pointer',
-                        fontSize: '32px',
+                        fontSize: '22px',
                       }}
                     />
                   </Popconfirm>
