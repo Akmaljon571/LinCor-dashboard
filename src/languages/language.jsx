@@ -24,6 +24,7 @@ const arr = [
       sent: 'Yuborish',
       addVideo: 'Yangi Video qo’shish',
       duration: 'Davomiyligi',
+      mCourse: 'Mavjud Kurslar',
     },
 
     ru: {
@@ -50,6 +51,7 @@ const arr = [
       sent: 'Отправка',
       addVideo: 'Добавить новое Bидео',
       duration: 'Продолжительность',
+      mCourse: 'Доступные курсы',
     },
 
     en: {
@@ -76,6 +78,7 @@ const arr = [
       sent: 'Sending',
       addVideo: 'Add a new Video',
       duration: 'Duration',
+      mCourse: 'Available Courses',
     },
   },
 ]

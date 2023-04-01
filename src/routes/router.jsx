@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Course, Video, Xisobot } from '../components'
+import { Course, Take, Video, Xisobot } from '../components'
 
 function Routerr() {
   return (
@@ -7,6 +7,7 @@ function Routerr() {
       <Route path="/xisobot" element={<Xisobot />} />
       <Route path="/kurslar" element={<Course />} />
       <Route path="/video" element={<Video />} />
+      <Route path="/sotish" element={<Take />} />
     </Routes>
   )
 }

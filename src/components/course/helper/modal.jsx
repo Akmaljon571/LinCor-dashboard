@@ -91,7 +91,10 @@ const ModalApp = ({ children }) => {
           </li>
           <li>
             <span>{Tillar[0][lang].bgc}</span>
-            <input ref={bgc} type="color" />
+            <select ref={bgc}>
+              <option value="#1D68F9">#1D68F9</option>
+              <option value="#FF9D7B">#FF9D7B</option>
+            </select>
           </li>
           <li>
             <span>{Tillar[0][lang].seq}</span>
