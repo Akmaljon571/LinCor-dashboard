@@ -14,7 +14,11 @@ function useComponent () {
     videoModal,
     setVideoModal,
     takeId,
-    setTakeId
+    setTakeId,
+    openId,
+    setOpenId,
+    modalOpen,
+    setModalOpen
   } = useContext(State)
   return {
     token,
@@ -28,7 +32,11 @@ function useComponent () {
     videoModal,
     setVideoModal,
     takeId,
-    setTakeId
+    setTakeId,
+    openId,
+    setOpenId,
+    modalOpen,
+    setModalOpen
   }
 }
 
