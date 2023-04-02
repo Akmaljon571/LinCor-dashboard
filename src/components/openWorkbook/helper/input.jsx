@@ -101,8 +101,8 @@ function InputOpen () {
           <li>
             <span>{Tillar[0][lang].seq}</span>
             <select ref={seq}>
-                <option value="1">1</option>
-                <option value="2">2</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
             </select>
           </li>
           <li className='rasm'>

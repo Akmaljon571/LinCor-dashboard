@@ -13,8 +13,11 @@
     }
 
     .modal_course {
-        input, select {
-            background-color: rgba(47, 73, 209, 0.6);;
+
+        input,
+        select {
+            background-color: rgba(47, 73, 209, 0.6);
+            ;
         }
     }
 }

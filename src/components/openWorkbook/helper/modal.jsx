@@ -23,7 +23,6 @@ function ModalOpen () {
       })
   }, [setCourse, token, count])
 
-
   const handleOk = () => {
     setModalOpen(false)
     const bgcolor = bgc.current.value
@@ -45,8 +44,7 @@ function ModalOpen () {
         autharization: token
       },
       body: formData
-    })
-    .then(data => {
+    }).then(data => {
       if (data.ok) {
         setCount(count + 1)
         setTimeout(() => {
@@ -66,7 +64,8 @@ function ModalOpen () {
             duration: 2
           })
         }, 1000)
-      }})
+      }
+    })
   }
 
   const handleCancel = () => {
@@ -78,7 +77,7 @@ function ModalOpen () {
       <b onClick={handleCancel} className={!modalOpen ? 'none' : 'b'}></b>
       <div className={!modalOpen ? 'none' : 'modal_course'}>
         <ul>
-        <li>
+          <li>
             <span>{Tillar[0][lang].oqish}</span>
             <select ref={bgc}>
               {course.length
@@ -93,20 +92,22 @@ function ModalOpen () {
           <li>
             <span>{Tillar[0][lang].seq}</span>
             <select ref={seq}>
-                <option value="1">1</option>
-                <option value="2">2</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
             </select>
           </li>
           <li className='rasm'>
             <span>{Tillar[0][lang].openWorkbook}</span>
             <label htmlFor='rasm'>
               <i>{Tillar[0][lang].yukla}</i>
-              <img style={{marginBottom: '15px'}} src={yukla} alt='yukla' />
+              <img style={{ marginBottom: '15px' }} src={yukla} alt='yukla' />
             </label>
             <input id='rasm' ref={rasmi} className='none' type='file' />
           </li>
         </ul>
-        <button style={{top: '170px'}} onClick={handleOk}>{Tillar[0][lang].sent}</button>
+        <button style={{ top: '170px' }} onClick={handleOk}>
+          {Tillar[0][lang].sent}
+        </button>
         {contextHolder}
       </div>
     </>

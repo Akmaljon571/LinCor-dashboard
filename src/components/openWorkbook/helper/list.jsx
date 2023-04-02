@@ -91,7 +91,7 @@ function ListOpen () {
           <Result
             status='404'
             title='404'
-            style={{marginLeft: '400px'}}
+            style={{ marginLeft: '400px' }}
             subTitle='Sorry, the page you visited does not exist.'
           />
         )}
