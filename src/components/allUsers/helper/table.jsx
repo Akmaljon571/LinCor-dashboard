@@ -54,7 +54,8 @@ function AllUserTable () {
       content: 'Loading...'
     })
     apiGet('/users/update/restart/' + userId, token, 'PUT').then(baza => {
-      if (baza.status === 204) {
+      console.log(baza)
+      if (baza.status === 200) {
         setCount(count + 1)
         setTimeout(() => {
           messageApi.open({
