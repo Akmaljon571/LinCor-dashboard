@@ -5,5 +5,6 @@ import Take from './take/take'
 import Error from './404/404'
 import AllUser from "./allUsers/allUsers";
 import OpenWorkbook from "./openWorkbook/openWorkbook";
+import Workbook from "./workbook/workbook";
 
-export { Xisobot, Course, Video, Take, Error, AllUser, OpenWorkbook };
+export { Xisobot, Course, Video, Take, Error, AllUser, OpenWorkbook, Workbook };

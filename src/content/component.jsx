@@ -13,6 +13,8 @@ export const StatPriveder = ({ children }) => {
   const [takeId, setTakeId] = useState(false)
   const [openId, setOpenId] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
+  const [modalWorkbook, setModalWorkbook] = useState(false)
+  const [workbookId, setWorkbookId] = useState(false)
 
   const data = {
     token,
@@ -30,7 +32,11 @@ export const StatPriveder = ({ children }) => {
     openId,
     setOpenId,
     modalOpen,
-    setModalOpen
+    setModalOpen,
+    modalWorkbook,
+    setModalWorkbook,
+    workbookId,
+    setWorkbookId
   }
   return <State.Provider value={data}>{children}</State.Provider>
 }

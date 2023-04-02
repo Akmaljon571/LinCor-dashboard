@@ -18,7 +18,11 @@ function useComponent () {
     openId,
     setOpenId,
     modalOpen,
-    setModalOpen
+    setModalOpen,
+    modalWorkbook,
+    setModalWorkbook,
+    workbookId,
+    setWorkbookId
   } = useContext(State)
   return {
     token,
@@ -36,7 +40,11 @@ function useComponent () {
     openId,
     setOpenId,
     modalOpen,
-    setModalOpen
+    setModalOpen,
+    modalWorkbook,
+    setModalWorkbook,
+    workbookId,
+    setWorkbookId
   }
 }
 

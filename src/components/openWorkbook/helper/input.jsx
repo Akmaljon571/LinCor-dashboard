@@ -74,7 +74,7 @@ function InputOpen () {
         messageApi.open({
           key,
           type: 'error',
-          content: 'Loaded!',
+          content: 'Malumotlarni toldiring!',
           duration: 2
         })
       }, 1000)

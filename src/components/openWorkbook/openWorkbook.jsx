@@ -1,8 +1,8 @@
 import InputOpen from './helper/input'
 import ListOpen from './helper/list'
+import ModalOpen from './helper/modal'
 import './openWorkbook.scss'
 import './dark.scss'
-import ModalOpen from './helper/modal'
 
 function OpenWorkbook () {
   return (
