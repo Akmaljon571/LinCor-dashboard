@@ -18,9 +18,6 @@ function Routerr () {
 
 /*
   setting
-  workbook
-  open-workbook
-  allUsers
 */
 
 export default Routerr

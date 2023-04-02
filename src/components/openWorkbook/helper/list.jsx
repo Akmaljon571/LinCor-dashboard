@@ -5,6 +5,7 @@ import useComponent from '../../../hooks/useComponent'
 import useStart from '../../../hooks/useStart'
 import Tillar from '../../../languages/language'
 import { apiGet } from '../../../utils/api'
+import fileDownload from 'js-file-download'
 
 function ListOpen () {
   const { openId, token, setCount, count, setModalOpen } = useComponent()
@@ -53,6 +54,15 @@ function ListOpen () {
     message.error('Click on No')
   }
 
+  const download = (id) => {
+    apiGet('/workbookopen/one/' + id)
+    // .then(re => re.json())
+    .then(data => {
+      console.log(data)
+      fileDownload(data, 'downlaod.pdf')
+    })
+  }
+
   return (
     <div className='list_open'>
       {contextHolder}
@@ -60,7 +70,7 @@ function ListOpen () {
         {data?.length ? (
           data.map((e, i) => (
             <li style={{ width: '250px' }} key={i}>
-              <h2>Workbook Open</h2>
+              <h2 style={{cursor: 'pointer'}} onClick={() => download(e.openbook_id)}>Workbook Open</h2>
               <p style={{ marginTop: '10px' }}>
                 <span>{Tillar[0][lang].seq}:</span> {e?.openbook_sequence} chi
               </p>

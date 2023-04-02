@@ -1,15 +1,4 @@
 .list_open {
-  h1 {
-    margin-top: 150px;
-    font-family: Inter;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 44px;
-    letter-spacing: 0.01em;
-    text-align: left;
-    color: rgba(0, 97, 247, 1);
-  }
-
   ul {
     display: flex;
     align-items: center;
@@ -206,5 +195,67 @@
     right: 110px;
     margin-top: 32px;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1423px) {
+  .openWorkbookbtn{
+    top: 210px !important;
+  } 
+}
+
+@media screen and (max-width: 401px) {
+  .openWorkbookbtn{
+    top: 210px !important;
+  } 
+}
+
+@media screen and (max-width: 810px) {
+  .list_open {
+    ul {
+
+      li {
+        width: 190px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .list_open {
+    ul {
+      
+      li {
+        width: 150px !important;
+
+        h2 {
+          font-size: 15px !important;
+        }
+
+        span{
+          font-size: 13px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .list_open {
+    ul {
+      
+      li {
+        width: 250px !important;
+        margin: 0 auto;
+
+        h2 {
+          font-size: 20px !important;
+        }
+
+        span{
+          font-size: 18px !important;
+        }
+      }
+    }
   }
 }

@@ -333,26 +333,36 @@ const LayoutMe = () => {
               },
               {
                 key: '2',
-                icon: <ReadOutlined style={{ fontSize: 20 }} />,
+                icon: <OrderedListOutlined style={{ fontSize: 20 }} />,
                 label: `${Tillar[0][lang].oqish}`
               },
               {
                 key: '3',
-                icon: <UsergroupAddOutlined style={{ fontSize: 20 }} />,
+                icon: <VideoCameraAddOutlined style={{ fontSize: 20 }} />,
                 label: `${Tillar[0][lang].guruh}`
               },
               {
                 key: '4',
-                icon: <PayCircleOutlined style={{ fontSize: 20 }} />,
-                label: `${Tillar[0][lang].tolov}`
+                icon: <FileOutlined style={{ fontSize: 20 }} />,
+                label: `${Tillar[0][lang].openWorkbook}`
               },
               {
                 key: '5',
-                icon: <OrderedListOutlined style={{ fontSize: 20 }} />,
-                label: `${Tillar[0][lang].davoma}`
+                icon: <ReadOutlined style={{ fontSize: 20 }} />,
+                label: `${Tillar[0][lang].tolov}`
               },
               {
                 key: '6',
+                icon: <UsergroupDeleteOutlined style={{ fontSize: 20 }} />,
+                label: `${Tillar[0][lang].allUsers}`
+              },
+              {
+                key: '7',
+                icon: <PayCircleOutlined style={{ fontSize: 20 }} />,
+                label: `${Tillar[0][lang].davoma}`
+              },
+              {
+                key: '8',
                 icon: (
                   <svg
                     xmlns='http://www.w3.org/2000/svg'

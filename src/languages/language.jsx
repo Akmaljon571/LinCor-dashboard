@@ -16,7 +16,7 @@ const arr = [
       oylik: 'Oylik Daromad',
       yillik: 'Yillik Daromad',
       courseAdd: 'Yangi Kurs qo’shish',
-      title: "Sarlavha",
+      title: 'Sarlavha',
       des: 'Ma’lumot',
       narx: 'Narxi',
       bgc: 'Orqa fon',
@@ -31,6 +31,8 @@ const arr = [
       familiyasi: 'Familiya',
       email: 'Email',
       active: 'Active',
+      open: 'Yangi Ochiq Kitob qoshish',
+      workbook: 'Yangi Workbook qo‘shish'
     },
 
     ru: {
@@ -49,7 +51,7 @@ const arr = [
       oylik: 'Ежемесячно',
       yillik: 'Годовой доход',
       courseAdd: 'Добавить новый курс',
-      title: "Заголовок",
+      title: 'Заголовок',
       des: 'Описание',
       narx: 'Цена',
       bgc: 'Фон',
@@ -64,6 +66,8 @@ const arr = [
       familiyasi: 'Фамилия',
       email: 'Электронная почта',
       active: 'Активный',
+      open: 'Добавить новую Oткрытую Kнигу',
+      workbook: 'Добавить новую Kнигу'
     },
 
     en: {
@@ -82,7 +86,7 @@ const arr = [
       oylik: 'Monthly Income',
       yillik: 'Annual Income',
       courseAdd: 'Add a new course',
-      title: "Title",
+      title: 'Title',
       des: 'Description',
       narx: 'Price',
       bgc: 'Background',
@@ -97,8 +101,10 @@ const arr = [
       familiyasi: 'Surname',
       email: 'Email',
       active: 'Active',
-    },
-  },
+      open: 'Add a new Open Book',
+      workbook: 'Add a new Workbook'
+    }
+  }
 ]
 
 export default arr

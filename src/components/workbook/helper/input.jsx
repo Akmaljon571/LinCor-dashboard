@@ -93,7 +93,7 @@ function InputWorkbook () {
   return (
     <>
       <div className='inputs_course'>
-        <h1>{Tillar[0][lang].addVideo}</h1>
+        <h1>{Tillar[0][lang].workbook}</h1>
         <ul>
           <li>
             <span>{Tillar[0][lang].oqish}</span>
@@ -126,7 +126,7 @@ function InputWorkbook () {
           </li>
         </ul>
         {contextHolder}
-        <button onClick={sent}>{Tillar[0][lang].sent}</button>
+        <button className='openWorkbookbtn' onClick={sent}>{Tillar[0][lang].sent}</button>
       </div>
       <select
         className='videoSelect'

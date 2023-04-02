@@ -1,4 +1,4 @@
-import { DeleteOutlined } from '@ant-design/icons'
+import { DeleteOutlined, UserAddOutlined } from '@ant-design/icons'
 import { Popconfirm, message, Result } from 'antd'
 import { useEffect, useState } from 'react'
 import useComponent from '../../../hooks/useComponent'
@@ -26,6 +26,34 @@ function AllUserTable () {
       content: 'Loading...'
     })
     apiGet('/users/admin/delete/' + userId, token, 'DELETE').then(baza => {
+      if (baza.status === 204) {
+        setCount(count + 1)
+        setTimeout(() => {
+          messageApi.open({
+            key,
+            type: 'success',
+            content: 'Loaded!',
+            duration: 2
+          })
+        }, 1000)
+      } else {
+        messageApi.open({
+          key,
+          type: 'error',
+          content: 'Loaded!',
+          duration: 2
+        })
+      }
+    })
+  }
+
+  const restart = userId => {
+    messageApi.open({
+      key,
+      type: 'loading',
+      content: 'Loading...'
+    })
+    apiGet('/users/update/restart/' + userId, token, 'PUT').then(baza => {
       if (baza.status === 204) {
         setCount(count + 1)
         setTimeout(() => {
@@ -91,7 +119,23 @@ function AllUserTable () {
                         }}
                       />
                     </Popconfirm>
-                  ) : null}
+                  ) : (
+                    <Popconfirm
+                      title="Qaytarmoqchimisz?"
+                      onConfirm={() => restart(e.user_id)}
+                      onCancel={cancel}
+                      okText='Yes'
+                      cancelText='No'
+                    >
+                      <UserAddOutlined
+                        style={{
+                          color: 'green',
+                          cursor: 'pointer',
+                          fontSize: '22px'
+                        }}
+                      />
+                    </Popconfirm>
+                  )}
                 </td>
               </tr>
             ))
