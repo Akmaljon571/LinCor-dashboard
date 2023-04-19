@@ -70,7 +70,9 @@ function ModalWorkbook () {
   }
 
   const work = id => {
-    if (id != 'false') {
+    const falsse = typeof id === 'string' ? 'false' : false
+
+    if (id != falsse) {
       apiGet('/video/by_course/' + id, token)
         .then(re => re.json())
         .then(data => setWorkbook(data))

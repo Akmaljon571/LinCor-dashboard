@@ -4,7 +4,6 @@ import {
   OrderedListOutlined,
   PayCircleOutlined,
   ReadOutlined,
-  UsergroupAddOutlined,
   UsergroupDeleteOutlined,
   VideoCameraAddOutlined
 } from '@ant-design/icons'

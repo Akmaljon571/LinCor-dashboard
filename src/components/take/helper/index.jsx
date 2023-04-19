@@ -18,7 +18,7 @@ function TakeInput () {
     apiGet('/users/statistika', token)
       .then(re => re.json())
       .then(data => setUser(data?.allUsers))
-  }, [count, token])
+  }, [count, token, setUser])
 
   useEffect(() => {
     apiGet('/courses', token)
@@ -27,7 +27,7 @@ function TakeInput () {
         setCourse(data)
         setTakeId(data[0].course_id)
       })
-  }, [count, token])
+  }, [count, token, setCount, setTakeId])
 
   const send = () => {
     const userId = findUser.current?.value

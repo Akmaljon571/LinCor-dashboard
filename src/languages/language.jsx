@@ -30,7 +30,6 @@ const arr = [
       ismi: 'Ismi',
       familiyasi: 'Familiya',
       email: 'Email',
-      active: 'Active',
       open: 'Yangi Ochiq Kitob qoshish',
       workbook: 'Yangi Workbook qo‘shish'
     },
@@ -46,7 +45,6 @@ const arr = [
       sozla: 'Настройка',
       statistika: '2023 ГОД статистика',
       jami: 'Пользователи',
-      active: 'Активы',
       hafta: 'Еженедельно',
       oylik: 'Ежемесячно',
       yillik: 'Годовой доход',
@@ -100,7 +98,6 @@ const arr = [
       ismi: 'Name',
       familiyasi: 'Surname',
       email: 'Email',
-      active: 'Active',
       open: 'Add a new Open Book',
       workbook: 'Add a new Workbook'
     }
